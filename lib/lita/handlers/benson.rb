@@ -12,7 +12,6 @@ module Lita
 
       def incoming(request, response)
         puts "Incoming message"
-        puts response.to_yaml
         target = Source.new(user: "79797_573361@chat.hipchat.com")
         robot.send_message(target, "hello")
       end
