@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = "lita-benson"
-  spec.version       = "0.0.4"
+  spec.version       = "0.0.5"
   spec.authors       = ["Matt Healy"]
   spec.email         = ["matt@matthewhealy.net"]
   spec.description   = %q{At your service.}

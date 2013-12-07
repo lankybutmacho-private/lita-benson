@@ -13,7 +13,7 @@ module Lita
       def incoming(request, response)
         Lita.logger.info "Incoming message"
         Lita.logger.info request.params['message']
-        target = Source.new(user: "79797_573361@chat.hipchat.com")
+        target = Source.new(private_message: true, user: "79797_573361@chat.hipchat.com")
         robot.send_message(target, "hello")
       end
     end
