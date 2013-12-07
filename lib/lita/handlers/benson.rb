@@ -7,11 +7,13 @@ module Lita
       http.get "/response", :incoming
 
       def outgoing(response)
+        Lita.logger.info response.inspect
         resp = http.get('http://benson-app.herokuapp.com/incoming-message?message=' + URI.escape(response.matches[0][0]))
       end
 
       def incoming(request, response)
-        Lita.logger.info "Incoming message"
+        Lita.logger.info request.inspect
+        Lita.logger.info request.params
         Lita.logger.info request.params['message']
         target = Source.new(private_message: true, user: "79797_573361@chat.hipchat.com")
         robot.send_message(target, "hello")
