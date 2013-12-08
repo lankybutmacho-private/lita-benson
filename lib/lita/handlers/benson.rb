@@ -17,7 +17,7 @@ module Lita
         Lita.logger.info request.inspect
         Lita.logger.info request.params
         Lita.logger.info request.params['message']
-        target = Source.new(private_message: true, user: "79797_573361@chat.hipchat.com")
+        target = Source.new(room: "Benson")
         Lita.logger.info "Target:"
         Lita.logger.info target.inspect
         robot.send_message(target, "hello")
