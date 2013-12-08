@@ -15,7 +15,7 @@ module Lita
 
       def incoming(request, response)
         target = Source.new(room: "79797_benson@conf.hipchat.com")
-        robot.send_message(target, request.params['message'])
+        robot.send_message(target, "@MattHealy " + request.params['message'])
       end
     end
 
