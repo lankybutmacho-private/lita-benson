@@ -7,7 +7,10 @@ module Lita
       http.get "/response", :incoming
 
       def outgoing(response)
-        resp = http.get('http://benson-app.herokuapp.com/incoming-message?message=' + URI.escape(response.matches[0][0]))
+        if response.message.source.user.id == "79797_573361@chat.hipchat.com"
+          Lita.logger.info "Got message: " + response.message.body
+          resp = http.get('http://benson-app.herokuapp.com/incoming-message?message=' + URI.escape(response.matches[0][0]))
+        end
       end
 
       def incoming(request, response)
