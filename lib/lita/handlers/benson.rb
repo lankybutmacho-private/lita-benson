@@ -14,8 +14,9 @@ module Lita
       end
 
       def incoming(request, response)
-        target = Source.new(room: "79797_benson@conf.hipchat.com")
-        robot.send_message(target, "@MattHealy " + request.params['message'])
+        user = User.create("79797_573361@chat.hipchat.com")
+        target = Source.new(user: user, private_message: true)
+        robot.send_message(target, request.params['message'])
       end
     end
 
