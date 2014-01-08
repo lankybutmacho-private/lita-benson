@@ -9,7 +9,7 @@ module Lita
       def outgoing(response)
         if response.message.source.user.id == "79797_573361@chat.hipchat.com"
           Lita.logger.info "Got message: " + response.message.body
-          resp = http.get('http://benson-app.herokuapp.com/incoming-message?message=' + URI.escape(response.matches[0][0]))
+          resp = http.get('http://benson-app.herokuapp.com/incoming-message?message=' + URI.escape(response.matches[0][0])).gsub(/&/, "%26")
         end
       end
 
